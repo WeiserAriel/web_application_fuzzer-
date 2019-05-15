@@ -1,0 +1,594 @@
+03-04 16:04 INFO     Start Script...
+03-04 16:04 DEBUG    start init_ssh 
+03-04 16:04 DEBUG    Open SSH Client to :10.209.27.136
+03-04 16:04 DEBUG    starting thread (client mode): 0x136362e8
+03-04 16:04 DEBUG    Local version/idstring: SSH-2.0-paramiko_2.4.2
+03-04 16:04 DEBUG    Remote version/idstring: SSH-2.0-OpenSSH_7.4
+03-04 16:04 INFO     Connected (version 2.0, client OpenSSH_7.4)
+03-04 16:04 DEBUG    kex algos:['curve25519-sha256', 'curve25519-sha256@libssh.org', 'ecdh-sha2-nistp256', 'ecdh-sha2-nistp384', 'ecdh-sha2-nistp521', 'diffie-hellman-group-exchange-sha256', 'diffie-hellman-group16-sha512', 'diffie-hellman-group18-sha512', 'diffie-hellman-group-exchange-sha1', 'diffie-hellman-group14-sha256', 'diffie-hellman-group14-sha1', 'diffie-hellman-group1-sha1'] server key:['ssh-rsa', 'rsa-sha2-512', 'rsa-sha2-256', 'ecdsa-sha2-nistp256', 'ssh-ed25519'] client encrypt:['chacha20-poly1305@openssh.com', 'aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com', 'aes128-cbc', 'aes192-cbc', 'aes256-cbc', 'blowfish-cbc', 'cast128-cbc', '3des-cbc'] server encrypt:['chacha20-poly1305@openssh.com', 'aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com', 'aes128-cbc', 'aes192-cbc', 'aes256-cbc', 'blowfish-cbc', 'cast128-cbc', '3des-cbc'] client mac:['umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-sha1'] server mac:['umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-sha1'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+03-04 16:04 DEBUG    Kex agreed: ecdh-sha2-nistp256
+03-04 16:04 DEBUG    HostKey agreed: ssh-ed25519
+03-04 16:04 DEBUG    Cipher agreed: aes128-ctr
+03-04 16:04 DEBUG    MAC agreed: hmac-sha2-256
+03-04 16:04 DEBUG    Compression agreed: none
+03-04 16:04 DEBUG    kex engine KexNistp256 specified hash_algo <built-in function openssl_sha256>
+03-04 16:04 DEBUG    Switch to new keys ...
+03-04 16:04 DEBUG    Adding ssh-ed25519 host key for 10.209.27.136: b'277b3b259c1a1e3a0ebfa1cc6d37a1b7'
+03-04 16:04 DEBUG    userauth is OK
+03-04 16:04 INFO     Authentication (password) successful!
+03-04 16:04 INFO     Open SSH Client to :10.209.27.136established!
+03-04 16:04 DEBUG    [chan 0] Max packet in: 32768 bytes
+03-04 16:04 DEBUG    Received global request "hostkeys-00@openssh.com"
+03-04 16:04 DEBUG    Rejecting "hostkeys-00@openssh.com" global request from server.
+03-04 16:04 DEBUG    [chan 0] Max packet out: 32768 bytes
+03-04 16:04 DEBUG    Secsh channel 0 opened.
+03-04 16:04 DEBUG    [chan 0] Sesch channel 0 request ok
+03-04 16:04 DEBUG    [chan 0] Sesch channel 0 request ok
+03-04 16:04 DEBUG    end init_ssh
+03-04 16:04 INFO     Open selected fuzzing file..
+03-04 16:04 DEBUG    Fuzzing file is /root/PycharmProjects/web_fuzzer/fuzzing_files/integer_overflow
+03-04 16:04 DEBUG    start validating basic url
+03-04 16:04 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/monitoring/topx
+03-04 16:04 DEBUG    start validating current url
+03-04 16:04 DEBUG    request is GET with params:
+03-04 16:04 DEBUG    Starting new HTTP connection (1): 10.209.27.136:80
+03-04 16:04 DEBUG    http://10.209.27.136:80 "GET /ufmRest/monitoring/topx?object=Node&attr=TxBW HTTP/1.1" 200 237
+03-04 16:04 DEBUG    start parse request result
+03-04 16:04 DEBUG    REST API log has not errors
+03-04 16:04 DEBUG    start check payload reflected in html
+03-04 16:04 DEBUG    skip check of reflected XSS in base url
+03-04 16:04 DEBUG    adding result into result container
+03-04 16:04 DEBUG    end parse request result
+03-04 16:04 DEBUG    start validating basic url
+03-04 16:04 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/monitoring/topx
+03-04 16:04 DEBUG    start validating current url
+03-04 16:04 DEBUG    request is GET with params:
+03-04 16:04 DEBUG    http://10.209.27.136:80 "GET /ufmRest/monitoring/topx?object=%3Cscript%3Ealert%28%27xss%27%29%3C%2Fscript%3E&attr=TxBW HTTP/1.1" 400 59
+03-04 16:04 DEBUG    start parse request result
+03-04 16:04 DEBUG    REST API log has not errors
+03-04 16:04 DEBUG    start check payload reflected in html
+03-04 16:04 CRITICAL XSS reflected was found! fuzz_word = <script>alert('xss')</script>URL = http://10.209.27.136/ufmRest/monitoring/topx?object=%3Cscript%3Ealert%28%27xss%27%29%3C%2Fscript%3E&attr=TxBW
+03-04 16:04 DEBUG    adding result into result container
+03-04 16:04 DEBUG    end parse request result
+03-04 16:04 DEBUG    start validating basic url
+03-04 16:04 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/monitoring/topx
+03-04 16:04 DEBUG    start validating current url
+03-04 16:04 DEBUG    request is GET with params:
+03-04 16:04 DEBUG    Resetting dropped connection: 10.209.27.136
+03-04 16:04 DEBUG    http://10.209.27.136:80 "GET /ufmRest/monitoring/topx?object=%3Cscript%3Ealert%28%27xss%27%29%3C%2Fscript%3E&attr=TxBW HTTP/1.1" 400 59
+03-04 16:04 DEBUG    start parse request result
+03-04 16:04 DEBUG    REST API log has not errors
+03-04 16:04 DEBUG    start check payload reflected in html
+03-04 16:04 CRITICAL XSS reflected was found! fuzz_word = <script>alert('xss')</script>URL = http://10.209.27.136/ufmRest/monitoring/topx?object=%3Cscript%3Ealert%28%27xss%27%29%3C%2Fscript%3E&attr=TxBW
+03-04 16:04 DEBUG    adding result into result container
+03-04 16:04 DEBUG    end parse request result
+03-04 16:04 DEBUG    start validating basic url
+03-04 16:04 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/monitoring/topx
+03-04 16:04 DEBUG    start validating current url
+03-04 16:04 DEBUG    request is GET with params:
+03-04 16:04 DEBUG    Resetting dropped connection: 10.209.27.136
+03-04 16:04 DEBUG    http://10.209.27.136:80 "GET /ufmRest/monitoring/topx?object=%3Cscript%3Ealert%28%27xss%27%29%3C%2Fscript%3E&attr=TxBW HTTP/1.1" 400 59
+03-04 16:04 DEBUG    start parse request result
+03-04 16:04 DEBUG    REST API log has not errors
+03-04 16:04 DEBUG    start check payload reflected in html
+03-04 16:04 CRITICAL XSS reflected was found! fuzz_word = <script>alert('xss')</script>URL = http://10.209.27.136/ufmRest/monitoring/topx?object=%3Cscript%3Ealert%28%27xss%27%29%3C%2Fscript%3E&attr=TxBW
+03-04 16:04 DEBUG    adding result into result container
+03-04 16:04 DEBUG    end parse request result
+03-04 16:04 DEBUG    start validating basic url
+03-04 16:04 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/monitoring/topx
+03-04 16:04 DEBUG    start validating current url
+03-04 16:04 DEBUG    request is GET with params:
+03-04 16:04 DEBUG    Resetting dropped connection: 10.209.27.136
+03-04 16:04 DEBUG    http://10.209.27.136:80 "GET /ufmRest/monitoring/topx?object=%3Cscript%3Ealert%28%27xss%27%29%3C%2Fscript%3E&attr=TxBW HTTP/1.1" 400 59
+03-04 16:04 DEBUG    start parse request result
+03-04 16:04 DEBUG    REST API log has not errors
+03-04 16:04 DEBUG    start check payload reflected in html
+03-04 16:04 CRITICAL XSS reflected was found! fuzz_word = <script>alert('xss')</script>URL = http://10.209.27.136/ufmRest/monitoring/topx?object=%3Cscript%3Ealert%28%27xss%27%29%3C%2Fscript%3E&attr=TxBW
+03-04 16:04 DEBUG    adding result into result container
+03-04 16:04 DEBUG    end parse request result
+03-04 16:04 DEBUG    start validating basic url
+03-04 16:04 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/monitoring/topx
+03-04 16:04 DEBUG    start validating current url
+03-04 16:04 DEBUG    request is GET with params:
+03-04 16:04 DEBUG    Resetting dropped connection: 10.209.27.136
+03-04 16:04 DEBUG    http://10.209.27.136:80 "GET /ufmRest/monitoring/topx?object=%3Cscript%3Ealert%28%27xss%27%29%3C%2Fscript%3E&attr=TxBW HTTP/1.1" 400 59
+03-04 16:04 DEBUG    start parse request result
+03-04 16:04 DEBUG    REST API log has not errors
+03-04 16:04 DEBUG    start check payload reflected in html
+03-04 16:04 CRITICAL XSS reflected was found! fuzz_word = <script>alert('xss')</script>URL = http://10.209.27.136/ufmRest/monitoring/topx?object=%3Cscript%3Ealert%28%27xss%27%29%3C%2Fscript%3E&attr=TxBW
+03-04 16:04 DEBUG    adding result into result container
+03-04 16:04 DEBUG    end parse request result
+03-04 16:04 DEBUG    start validating basic url
+03-04 16:04 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/monitoring/topx
+03-04 16:04 DEBUG    start validating current url
+03-04 16:04 DEBUG    request is GET with params:
+03-04 16:04 DEBUG    Resetting dropped connection: 10.209.27.136
+03-04 16:04 DEBUG    http://10.209.27.136:80 "GET /ufmRest/monitoring/topx?object=%3Cscript%3Ealert%28%27xss%27%29%3C%2Fscript%3E&attr=TxBW HTTP/1.1" 400 59
+03-04 16:04 DEBUG    start parse request result
+03-04 16:04 DEBUG    REST API log has not errors
+03-04 16:04 DEBUG    start check payload reflected in html
+03-04 16:04 CRITICAL XSS reflected was found! fuzz_word = <script>alert('xss')</script>URL = http://10.209.27.136/ufmRest/monitoring/topx?object=%3Cscript%3Ealert%28%27xss%27%29%3C%2Fscript%3E&attr=TxBW
+03-04 16:04 DEBUG    adding result into result container
+03-04 16:04 DEBUG    end parse request result
+03-04 16:04 DEBUG    start validating basic url
+03-04 16:04 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/monitoring/topx
+03-04 16:04 DEBUG    start validating current url
+03-04 16:04 DEBUG    request is GET with params:
+03-04 16:04 DEBUG    Resetting dropped connection: 10.209.27.136
+03-04 16:04 DEBUG    http://10.209.27.136:80 "GET /ufmRest/monitoring/topx?object=%3Cscript%3Ealert%28%27xss%27%29%3C%2Fscript%3E&attr=TxBW HTTP/1.1" 400 59
+03-04 16:04 DEBUG    start parse request result
+03-04 16:04 DEBUG    REST API log has not errors
+03-04 16:04 DEBUG    start check payload reflected in html
+03-04 16:04 CRITICAL XSS reflected was found! fuzz_word = <script>alert('xss')</script>URL = http://10.209.27.136/ufmRest/monitoring/topx?object=%3Cscript%3Ealert%28%27xss%27%29%3C%2Fscript%3E&attr=TxBW
+03-04 16:04 DEBUG    adding result into result container
+03-04 16:04 DEBUG    end parse request result
+03-04 16:04 DEBUG    start validating basic url
+03-04 16:04 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/monitoring/topx
+03-04 16:04 DEBUG    start validating current url
+03-04 16:04 DEBUG    request is GET with params:
+03-04 16:04 DEBUG    Resetting dropped connection: 10.209.27.136
+03-04 16:04 DEBUG    http://10.209.27.136:80 "GET /ufmRest/monitoring/topx?object=%3Cscript%3Ealert%28%27xss%27%29%3C%2Fscript%3E&attr=TxBW HTTP/1.1" 400 59
+03-04 16:04 DEBUG    start parse request result
+03-04 16:04 DEBUG    REST API log has not errors
+03-04 16:04 DEBUG    start check payload reflected in html
+03-04 16:04 CRITICAL XSS reflected was found! fuzz_word = <script>alert('xss')</script>URL = http://10.209.27.136/ufmRest/monitoring/topx?object=%3Cscript%3Ealert%28%27xss%27%29%3C%2Fscript%3E&attr=TxBW
+03-04 16:04 DEBUG    adding result into result container
+03-04 16:04 DEBUG    end parse request result
+03-04 16:04 DEBUG    start validating basic url
+03-04 16:04 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/monitoring/topx
+03-04 16:04 DEBUG    start validating current url
+03-04 16:04 DEBUG    request is GET with params:
+03-04 16:04 DEBUG    Resetting dropped connection: 10.209.27.136
+03-04 16:04 DEBUG    http://10.209.27.136:80 "GET /ufmRest/monitoring/topx?object=%3Cscript%3Ealert%28%27xss%27%29%3C%2Fscript%3E&attr=TxBW HTTP/1.1" 400 59
+03-04 16:04 DEBUG    start parse request result
+03-04 16:04 DEBUG    REST API log has not errors
+03-04 16:04 DEBUG    start check payload reflected in html
+03-04 16:04 CRITICAL XSS reflected was found! fuzz_word = <script>alert('xss')</script>URL = http://10.209.27.136/ufmRest/monitoring/topx?object=%3Cscript%3Ealert%28%27xss%27%29%3C%2Fscript%3E&attr=TxBW
+03-04 16:04 DEBUG    adding result into result container
+03-04 16:04 DEBUG    end parse request result
+03-04 16:04 DEBUG    start validating basic url
+03-04 16:04 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/monitoring/topx
+03-04 16:04 DEBUG    start validating current url
+03-04 16:04 DEBUG    request is GET with params:
+03-04 16:04 DEBUG    Resetting dropped connection: 10.209.27.136
+03-04 16:04 DEBUG    http://10.209.27.136:80 "GET /ufmRest/monitoring/topx?object=%3Cscript%3Ealert%28%27xss%27%29%3C%2Fscript%3E&attr=TxBW HTTP/1.1" 400 59
+03-04 16:04 DEBUG    start parse request result
+03-04 16:04 DEBUG    REST API log has not errors
+03-04 16:04 DEBUG    start check payload reflected in html
+03-04 16:04 CRITICAL XSS reflected was found! fuzz_word = <script>alert('xss')</script>URL = http://10.209.27.136/ufmRest/monitoring/topx?object=%3Cscript%3Ealert%28%27xss%27%29%3C%2Fscript%3E&attr=TxBW
+03-04 16:04 DEBUG    adding result into result container
+03-04 16:04 DEBUG    end parse request result
+03-04 16:04 DEBUG    start validating basic url
+03-04 16:04 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/monitoring/topx
+03-04 16:04 DEBUG    start validating current url
+03-04 16:04 DEBUG    request is GET with params:
+03-04 16:04 DEBUG    Resetting dropped connection: 10.209.27.136
+03-04 16:04 DEBUG    http://10.209.27.136:80 "GET /ufmRest/monitoring/topx?object=%3Cscript%3Ealert%28%27xss%27%29%3C%2Fscript%3E&attr=TxBW HTTP/1.1" 400 59
+03-04 16:04 DEBUG    start parse request result
+03-04 16:04 DEBUG    REST API log has not errors
+03-04 16:04 DEBUG    start check payload reflected in html
+03-04 16:04 CRITICAL XSS reflected was found! fuzz_word = <script>alert('xss')</script>URL = http://10.209.27.136/ufmRest/monitoring/topx?object=%3Cscript%3Ealert%28%27xss%27%29%3C%2Fscript%3E&attr=TxBW
+03-04 16:04 DEBUG    adding result into result container
+03-04 16:04 DEBUG    end parse request result
+03-04 16:04 DEBUG    start validating basic url
+03-04 16:04 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/monitoring/topx
+03-04 16:04 DEBUG    start validating current url
+03-04 16:04 DEBUG    request is GET with params:
+03-04 16:04 DEBUG    Resetting dropped connection: 10.209.27.136
+03-04 16:04 DEBUG    http://10.209.27.136:80 "GET /ufmRest/monitoring/topx?object=%3Cscript%3Ealert%28%27xss%27%29%3C%2Fscript%3E&attr=TxBW HTTP/1.1" 400 59
+03-04 16:04 DEBUG    start parse request result
+03-04 16:04 DEBUG    REST API log has not errors
+03-04 16:04 DEBUG    start check payload reflected in html
+03-04 16:04 CRITICAL XSS reflected was found! fuzz_word = <script>alert('xss')</script>URL = http://10.209.27.136/ufmRest/monitoring/topx?object=%3Cscript%3Ealert%28%27xss%27%29%3C%2Fscript%3E&attr=TxBW
+03-04 16:04 DEBUG    adding result into result container
+03-04 16:04 DEBUG    end parse request result
+03-04 16:04 DEBUG    start validating basic url
+03-04 16:04 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/monitoring/topx
+03-04 16:04 DEBUG    start validating current url
+03-04 16:04 DEBUG    request is GET with params:
+03-04 16:04 DEBUG    Resetting dropped connection: 10.209.27.136
+03-04 16:04 DEBUG    http://10.209.27.136:80 "GET /ufmRest/monitoring/topx?object=%3Cscript%3Ealert%28%27xss%27%29%3C%2Fscript%3E&attr=TxBW HTTP/1.1" 400 59
+03-04 16:04 DEBUG    start parse request result
+03-04 16:04 DEBUG    REST API log has not errors
+03-04 16:04 DEBUG    start check payload reflected in html
+03-04 16:04 CRITICAL XSS reflected was found! fuzz_word = <script>alert('xss')</script>URL = http://10.209.27.136/ufmRest/monitoring/topx?object=%3Cscript%3Ealert%28%27xss%27%29%3C%2Fscript%3E&attr=TxBW
+03-04 16:04 DEBUG    adding result into result container
+03-04 16:04 DEBUG    end parse request result
+03-04 16:04 DEBUG    start validating basic url
+03-04 16:04 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/monitoring/topx
+03-04 16:04 DEBUG    start validating current url
+03-04 16:04 DEBUG    request is GET with params:
+03-04 16:04 DEBUG    Resetting dropped connection: 10.209.27.136
+03-04 16:04 DEBUG    http://10.209.27.136:80 "GET /ufmRest/monitoring/topx?object=%3Cscript%3Ealert%28%27xss%27%29%3C%2Fscript%3E&attr=TxBW HTTP/1.1" 400 59
+03-04 16:04 DEBUG    start parse request result
+03-04 16:04 DEBUG    REST API log has not errors
+03-04 16:04 DEBUG    start check payload reflected in html
+03-04 16:04 CRITICAL XSS reflected was found! fuzz_word = <script>alert('xss')</script>URL = http://10.209.27.136/ufmRest/monitoring/topx?object=%3Cscript%3Ealert%28%27xss%27%29%3C%2Fscript%3E&attr=TxBW
+03-04 16:04 DEBUG    adding result into result container
+03-04 16:04 DEBUG    end parse request result
+03-04 16:04 DEBUG    start validating basic url
+03-04 16:04 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/monitoring/topx
+03-04 16:04 DEBUG    start validating current url
+03-04 16:04 DEBUG    request is GET with params:
+03-04 16:04 DEBUG    Resetting dropped connection: 10.209.27.136
+03-04 16:04 DEBUG    http://10.209.27.136:80 "GET /ufmRest/monitoring/topx?object=%3Cscript%3Ealert%28%27xss%27%29%3C%2Fscript%3E&attr=TxBW HTTP/1.1" 400 59
+03-04 16:04 DEBUG    start parse request result
+03-04 16:04 DEBUG    REST API log has not errors
+03-04 16:04 DEBUG    start check payload reflected in html
+03-04 16:04 CRITICAL XSS reflected was found! fuzz_word = <script>alert('xss')</script>URL = http://10.209.27.136/ufmRest/monitoring/topx?object=%3Cscript%3Ealert%28%27xss%27%29%3C%2Fscript%3E&attr=TxBW
+03-04 16:04 DEBUG    adding result into result container
+03-04 16:04 DEBUG    end parse request result
+03-04 16:04 DEBUG    start print_result
+03-04 16:04 INFO     printing all fuzzing results for url: http://10.209.27.136/ufmRest/monitoring/topx?object=Node&attr=TxBW
+03-04 16:04 DEBUG    end print_result
+03-04 16:04 DEBUG    starting save results
+03-04 16:04 INFO     saving results of fuzzing file: integer_overflow
+03-04 16:04 DEBUG    end save results
+03-04 16:04 DEBUG    Clearing results for next url
+03-04 16:04 DEBUG    start validating basic url
+03-04 16:04 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/app/users
+03-04 16:04 DEBUG    start validating current url
+03-04 16:04 DEBUG    request is GET without params:
+03-04 16:04 DEBUG    Resetting dropped connection: 10.209.27.136
+03-04 16:04 DEBUG    http://10.209.27.136:80 "GET /ufmRest/app/users HTTP/1.1" 200 76
+03-04 16:04 DEBUG    start parse request result
+03-04 16:04 DEBUG    REST API log has not errors
+03-04 16:04 DEBUG    start check payload reflected in html
+03-04 16:04 DEBUG    skip check of reflected XSS in base url
+03-04 16:04 DEBUG    adding result into result container
+03-04 16:04 DEBUG    end parse request result
+03-04 16:04 DEBUG    start validating basic url
+03-04 16:04 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/app/users
+03-04 16:04 DEBUG    start validating current url
+03-04 16:04 DEBUG    request is GET without params:
+03-04 16:04 DEBUG    http://10.209.27.136:80 "GET /ufmRest/app/users HTTP/1.1" 200 76
+03-04 16:04 DEBUG    start parse request result
+03-04 16:05 DEBUG    REST API log has not errors
+03-04 16:05 DEBUG    start check payload reflected in html
+03-04 16:05 DEBUG    XSS reflected wasn't found for URL = http://10.209.27.136/ufmRest/app/users
+03-04 16:05 DEBUG    adding result into result container
+03-04 16:05 DEBUG    end parse request result
+03-04 16:05 DEBUG    start validating basic url
+03-04 16:05 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/app/users
+03-04 16:05 DEBUG    start validating current url
+03-04 16:05 DEBUG    request is GET without params:
+03-04 16:05 DEBUG    http://10.209.27.136:80 "GET /ufmRest/app/users HTTP/1.1" 200 76
+03-04 16:05 DEBUG    start parse request result
+03-04 16:05 DEBUG    REST API log has not errors
+03-04 16:05 DEBUG    start check payload reflected in html
+03-04 16:05 DEBUG    XSS reflected wasn't found for URL = http://10.209.27.136/ufmRest/app/users
+03-04 16:05 DEBUG    adding result into result container
+03-04 16:05 DEBUG    end parse request result
+03-04 16:05 DEBUG    start validating basic url
+03-04 16:05 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/app/users
+03-04 16:05 DEBUG    start validating current url
+03-04 16:05 DEBUG    request is GET without params:
+03-04 16:05 DEBUG    http://10.209.27.136:80 "GET /ufmRest/app/users HTTP/1.1" 200 76
+03-04 16:05 DEBUG    start parse request result
+03-04 16:05 DEBUG    REST API log has not errors
+03-04 16:05 DEBUG    start check payload reflected in html
+03-04 16:05 DEBUG    XSS reflected wasn't found for URL = http://10.209.27.136/ufmRest/app/users
+03-04 16:05 DEBUG    adding result into result container
+03-04 16:05 DEBUG    end parse request result
+03-04 16:05 DEBUG    start validating basic url
+03-04 16:05 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/app/users
+03-04 16:05 DEBUG    start validating current url
+03-04 16:05 DEBUG    request is GET without params:
+03-04 16:05 DEBUG    http://10.209.27.136:80 "GET /ufmRest/app/users HTTP/1.1" 200 76
+03-04 16:05 DEBUG    start parse request result
+03-04 16:05 DEBUG    REST API log has not errors
+03-04 16:05 DEBUG    start check payload reflected in html
+03-04 16:05 DEBUG    XSS reflected wasn't found for URL = http://10.209.27.136/ufmRest/app/users
+03-04 16:05 DEBUG    adding result into result container
+03-04 16:05 DEBUG    end parse request result
+03-04 16:05 DEBUG    start validating basic url
+03-04 16:05 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/app/users
+03-04 16:05 DEBUG    start validating current url
+03-04 16:05 DEBUG    request is GET without params:
+03-04 16:05 DEBUG    http://10.209.27.136:80 "GET /ufmRest/app/users HTTP/1.1" 200 76
+03-04 16:05 DEBUG    start parse request result
+03-04 16:05 DEBUG    REST API log has not errors
+03-04 16:05 DEBUG    start check payload reflected in html
+03-04 16:05 DEBUG    XSS reflected wasn't found for URL = http://10.209.27.136/ufmRest/app/users
+03-04 16:05 DEBUG    adding result into result container
+03-04 16:05 DEBUG    end parse request result
+03-04 16:05 DEBUG    start validating basic url
+03-04 16:05 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/app/users
+03-04 16:05 DEBUG    start validating current url
+03-04 16:05 DEBUG    request is GET without params:
+03-04 16:05 DEBUG    http://10.209.27.136:80 "GET /ufmRest/app/users HTTP/1.1" 200 76
+03-04 16:05 DEBUG    start parse request result
+03-04 16:05 DEBUG    REST API log has not errors
+03-04 16:05 DEBUG    start check payload reflected in html
+03-04 16:05 DEBUG    XSS reflected wasn't found for URL = http://10.209.27.136/ufmRest/app/users
+03-04 16:05 DEBUG    adding result into result container
+03-04 16:05 DEBUG    end parse request result
+03-04 16:05 DEBUG    start validating basic url
+03-04 16:05 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/app/users
+03-04 16:05 DEBUG    start validating current url
+03-04 16:05 DEBUG    request is GET without params:
+03-04 16:05 DEBUG    http://10.209.27.136:80 "GET /ufmRest/app/users HTTP/1.1" 200 76
+03-04 16:05 DEBUG    start parse request result
+03-04 16:05 DEBUG    REST API log has not errors
+03-04 16:05 DEBUG    start check payload reflected in html
+03-04 16:05 DEBUG    XSS reflected wasn't found for URL = http://10.209.27.136/ufmRest/app/users
+03-04 16:05 DEBUG    adding result into result container
+03-04 16:05 DEBUG    end parse request result
+03-04 16:05 DEBUG    start validating basic url
+03-04 16:05 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/app/users
+03-04 16:05 DEBUG    start validating current url
+03-04 16:05 DEBUG    request is GET without params:
+03-04 16:05 DEBUG    http://10.209.27.136:80 "GET /ufmRest/app/users HTTP/1.1" 200 76
+03-04 16:05 DEBUG    start parse request result
+03-04 16:05 DEBUG    REST API log has not errors
+03-04 16:05 DEBUG    start check payload reflected in html
+03-04 16:05 DEBUG    XSS reflected wasn't found for URL = http://10.209.27.136/ufmRest/app/users
+03-04 16:05 DEBUG    adding result into result container
+03-04 16:05 DEBUG    end parse request result
+03-04 16:05 DEBUG    start validating basic url
+03-04 16:05 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/app/users
+03-04 16:05 DEBUG    start validating current url
+03-04 16:05 DEBUG    request is GET without params:
+03-04 16:05 DEBUG    http://10.209.27.136:80 "GET /ufmRest/app/users HTTP/1.1" 200 76
+03-04 16:05 DEBUG    start parse request result
+03-04 16:05 DEBUG    REST API log has not errors
+03-04 16:05 DEBUG    start check payload reflected in html
+03-04 16:05 DEBUG    XSS reflected wasn't found for URL = http://10.209.27.136/ufmRest/app/users
+03-04 16:05 DEBUG    adding result into result container
+03-04 16:05 DEBUG    end parse request result
+03-04 16:05 DEBUG    start validating basic url
+03-04 16:05 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/app/users
+03-04 16:05 DEBUG    start validating current url
+03-04 16:05 DEBUG    request is GET without params:
+03-04 16:05 DEBUG    http://10.209.27.136:80 "GET /ufmRest/app/users HTTP/1.1" 200 76
+03-04 16:05 DEBUG    start parse request result
+03-04 16:05 DEBUG    REST API log has not errors
+03-04 16:05 DEBUG    start check payload reflected in html
+03-04 16:05 DEBUG    XSS reflected wasn't found for URL = http://10.209.27.136/ufmRest/app/users
+03-04 16:05 DEBUG    adding result into result container
+03-04 16:05 DEBUG    end parse request result
+03-04 16:05 DEBUG    start validating basic url
+03-04 16:05 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/app/users
+03-04 16:05 DEBUG    start validating current url
+03-04 16:05 DEBUG    request is GET without params:
+03-04 16:05 DEBUG    http://10.209.27.136:80 "GET /ufmRest/app/users HTTP/1.1" 200 76
+03-04 16:05 DEBUG    start parse request result
+03-04 16:05 DEBUG    REST API log has not errors
+03-04 16:05 DEBUG    start check payload reflected in html
+03-04 16:05 DEBUG    XSS reflected wasn't found for URL = http://10.209.27.136/ufmRest/app/users
+03-04 16:05 DEBUG    adding result into result container
+03-04 16:05 DEBUG    end parse request result
+03-04 16:05 DEBUG    start validating basic url
+03-04 16:05 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/app/users
+03-04 16:05 DEBUG    start validating current url
+03-04 16:05 DEBUG    request is GET without params:
+03-04 16:05 DEBUG    http://10.209.27.136:80 "GET /ufmRest/app/users HTTP/1.1" 200 76
+03-04 16:05 DEBUG    start parse request result
+03-04 16:05 DEBUG    REST API log has not errors
+03-04 16:05 DEBUG    start check payload reflected in html
+03-04 16:05 DEBUG    XSS reflected wasn't found for URL = http://10.209.27.136/ufmRest/app/users
+03-04 16:05 DEBUG    adding result into result container
+03-04 16:05 DEBUG    end parse request result
+03-04 16:05 DEBUG    start validating basic url
+03-04 16:05 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/app/users
+03-04 16:05 DEBUG    start validating current url
+03-04 16:05 DEBUG    request is GET without params:
+03-04 16:05 DEBUG    http://10.209.27.136:80 "GET /ufmRest/app/users HTTP/1.1" 200 76
+03-04 16:05 DEBUG    start parse request result
+03-04 16:05 DEBUG    REST API log has not errors
+03-04 16:05 DEBUG    start check payload reflected in html
+03-04 16:05 DEBUG    XSS reflected wasn't found for URL = http://10.209.27.136/ufmRest/app/users
+03-04 16:05 DEBUG    adding result into result container
+03-04 16:05 DEBUG    end parse request result
+03-04 16:05 DEBUG    start validating basic url
+03-04 16:05 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/app/users
+03-04 16:05 DEBUG    start validating current url
+03-04 16:05 DEBUG    request is GET without params:
+03-04 16:05 DEBUG    http://10.209.27.136:80 "GET /ufmRest/app/users HTTP/1.1" 200 76
+03-04 16:05 DEBUG    start parse request result
+03-04 16:05 DEBUG    REST API log has not errors
+03-04 16:05 DEBUG    start check payload reflected in html
+03-04 16:05 DEBUG    XSS reflected wasn't found for URL = http://10.209.27.136/ufmRest/app/users
+03-04 16:05 DEBUG    adding result into result container
+03-04 16:05 DEBUG    end parse request result
+03-04 16:05 DEBUG    start validating basic url
+03-04 16:05 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/app/users
+03-04 16:05 DEBUG    start validating current url
+03-04 16:05 DEBUG    request is GET without params:
+03-04 16:05 DEBUG    http://10.209.27.136:80 "GET /ufmRest/app/users HTTP/1.1" 200 76
+03-04 16:05 DEBUG    start parse request result
+03-04 16:05 DEBUG    REST API log has not errors
+03-04 16:05 DEBUG    start check payload reflected in html
+03-04 16:05 DEBUG    XSS reflected wasn't found for URL = http://10.209.27.136/ufmRest/app/users
+03-04 16:05 DEBUG    adding result into result container
+03-04 16:05 DEBUG    end parse request result
+03-04 16:05 DEBUG    start print_result
+03-04 16:05 INFO     printing all fuzzing results for url: http://10.209.27.136/ufmRest/app/users
+03-04 16:05 DEBUG    end print_result
+03-04 16:05 DEBUG    starting save results
+03-04 16:05 INFO     saving results of fuzzing file: integer_overflow
+03-04 16:05 DEBUG    end save results
+03-04 16:05 DEBUG    Clearing results for next url
+03-04 16:05 DEBUG    start validating basic url
+03-04 16:05 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/monitoring/resources
+03-04 16:05 DEBUG    start validating current url
+03-04 16:05 DEBUG    request is GET without params:
+03-04 16:05 DEBUG    http://10.209.27.136:80 "GET /ufmRest/monitoring/resources HTTP/1.1" 200 146
+03-04 16:05 DEBUG    start parse request result
+03-04 16:05 DEBUG    REST API log has not errors
+03-04 16:05 DEBUG    start check payload reflected in html
+03-04 16:05 DEBUG    skip check of reflected XSS in base url
+03-04 16:05 DEBUG    adding result into result container
+03-04 16:05 DEBUG    end parse request result
+03-04 16:05 DEBUG    start validating basic url
+03-04 16:05 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/monitoring/resources
+03-04 16:05 DEBUG    start validating current url
+03-04 16:05 DEBUG    request is GET without params:
+03-04 16:05 DEBUG    http://10.209.27.136:80 "GET /ufmRest/monitoring/resources HTTP/1.1" 200 146
+03-04 16:05 DEBUG    start parse request result
+03-04 16:05 DEBUG    REST API log has not errors
+03-04 16:05 DEBUG    start check payload reflected in html
+03-04 16:05 DEBUG    XSS reflected wasn't found for URL = http://10.209.27.136/ufmRest/monitoring/resources
+03-04 16:05 DEBUG    adding result into result container
+03-04 16:05 DEBUG    end parse request result
+03-04 16:05 DEBUG    start validating basic url
+03-04 16:05 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/monitoring/resources
+03-04 16:05 DEBUG    start validating current url
+03-04 16:05 DEBUG    request is GET without params:
+03-04 16:05 DEBUG    http://10.209.27.136:80 "GET /ufmRest/monitoring/resources HTTP/1.1" 200 146
+03-04 16:05 DEBUG    start parse request result
+03-04 16:05 DEBUG    REST API log has not errors
+03-04 16:05 DEBUG    start check payload reflected in html
+03-04 16:05 DEBUG    XSS reflected wasn't found for URL = http://10.209.27.136/ufmRest/monitoring/resources
+03-04 16:05 DEBUG    adding result into result container
+03-04 16:05 DEBUG    end parse request result
+03-04 16:05 DEBUG    start validating basic url
+03-04 16:05 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/monitoring/resources
+03-04 16:05 DEBUG    start validating current url
+03-04 16:05 DEBUG    request is GET without params:
+03-04 16:05 DEBUG    http://10.209.27.136:80 "GET /ufmRest/monitoring/resources HTTP/1.1" 200 146
+03-04 16:05 DEBUG    start parse request result
+03-04 16:05 DEBUG    REST API log has not errors
+03-04 16:05 DEBUG    start check payload reflected in html
+03-04 16:05 DEBUG    XSS reflected wasn't found for URL = http://10.209.27.136/ufmRest/monitoring/resources
+03-04 16:05 DEBUG    adding result into result container
+03-04 16:05 DEBUG    end parse request result
+03-04 16:05 DEBUG    start validating basic url
+03-04 16:05 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/monitoring/resources
+03-04 16:05 DEBUG    start validating current url
+03-04 16:05 DEBUG    request is GET without params:
+03-04 16:05 DEBUG    http://10.209.27.136:80 "GET /ufmRest/monitoring/resources HTTP/1.1" 200 146
+03-04 16:05 DEBUG    start parse request result
+03-04 16:05 DEBUG    REST API log has not errors
+03-04 16:05 DEBUG    start check payload reflected in html
+03-04 16:05 DEBUG    XSS reflected wasn't found for URL = http://10.209.27.136/ufmRest/monitoring/resources
+03-04 16:05 DEBUG    adding result into result container
+03-04 16:05 DEBUG    end parse request result
+03-04 16:05 DEBUG    start validating basic url
+03-04 16:05 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/monitoring/resources
+03-04 16:05 DEBUG    start validating current url
+03-04 16:05 DEBUG    request is GET without params:
+03-04 16:05 DEBUG    http://10.209.27.136:80 "GET /ufmRest/monitoring/resources HTTP/1.1" 200 146
+03-04 16:05 DEBUG    start parse request result
+03-04 16:05 DEBUG    REST API log has not errors
+03-04 16:05 DEBUG    start check payload reflected in html
+03-04 16:05 DEBUG    XSS reflected wasn't found for URL = http://10.209.27.136/ufmRest/monitoring/resources
+03-04 16:05 DEBUG    adding result into result container
+03-04 16:05 DEBUG    end parse request result
+03-04 16:05 DEBUG    start validating basic url
+03-04 16:05 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/monitoring/resources
+03-04 16:05 DEBUG    start validating current url
+03-04 16:05 DEBUG    request is GET without params:
+03-04 16:05 DEBUG    http://10.209.27.136:80 "GET /ufmRest/monitoring/resources HTTP/1.1" 200 146
+03-04 16:05 DEBUG    start parse request result
+03-04 16:05 DEBUG    REST API log has not errors
+03-04 16:05 DEBUG    start check payload reflected in html
+03-04 16:05 DEBUG    XSS reflected wasn't found for URL = http://10.209.27.136/ufmRest/monitoring/resources
+03-04 16:05 DEBUG    adding result into result container
+03-04 16:05 DEBUG    end parse request result
+03-04 16:05 DEBUG    start validating basic url
+03-04 16:05 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/monitoring/resources
+03-04 16:05 DEBUG    start validating current url
+03-04 16:05 DEBUG    request is GET without params:
+03-04 16:05 DEBUG    http://10.209.27.136:80 "GET /ufmRest/monitoring/resources HTTP/1.1" 200 146
+03-04 16:05 DEBUG    start parse request result
+03-04 16:05 DEBUG    REST API log has not errors
+03-04 16:05 DEBUG    start check payload reflected in html
+03-04 16:05 DEBUG    XSS reflected wasn't found for URL = http://10.209.27.136/ufmRest/monitoring/resources
+03-04 16:05 DEBUG    adding result into result container
+03-04 16:05 DEBUG    end parse request result
+03-04 16:05 DEBUG    start validating basic url
+03-04 16:05 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/monitoring/resources
+03-04 16:05 DEBUG    start validating current url
+03-04 16:05 DEBUG    request is GET without params:
+03-04 16:05 DEBUG    http://10.209.27.136:80 "GET /ufmRest/monitoring/resources HTTP/1.1" 200 146
+03-04 16:05 DEBUG    start parse request result
+03-04 16:05 DEBUG    REST API log has not errors
+03-04 16:05 DEBUG    start check payload reflected in html
+03-04 16:05 DEBUG    XSS reflected wasn't found for URL = http://10.209.27.136/ufmRest/monitoring/resources
+03-04 16:05 DEBUG    adding result into result container
+03-04 16:05 DEBUG    end parse request result
+03-04 16:05 DEBUG    start validating basic url
+03-04 16:05 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/monitoring/resources
+03-04 16:05 DEBUG    start validating current url
+03-04 16:05 DEBUG    request is GET without params:
+03-04 16:05 DEBUG    http://10.209.27.136:80 "GET /ufmRest/monitoring/resources HTTP/1.1" 200 146
+03-04 16:05 DEBUG    start parse request result
+03-04 16:05 DEBUG    REST API log has not errors
+03-04 16:05 DEBUG    start check payload reflected in html
+03-04 16:05 DEBUG    XSS reflected wasn't found for URL = http://10.209.27.136/ufmRest/monitoring/resources
+03-04 16:05 DEBUG    adding result into result container
+03-04 16:05 DEBUG    end parse request result
+03-04 16:05 DEBUG    start validating basic url
+03-04 16:05 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/monitoring/resources
+03-04 16:05 DEBUG    start validating current url
+03-04 16:05 DEBUG    request is GET without params:
+03-04 16:05 DEBUG    http://10.209.27.136:80 "GET /ufmRest/monitoring/resources HTTP/1.1" 200 146
+03-04 16:05 DEBUG    start parse request result
+03-04 16:05 DEBUG    REST API log has not errors
+03-04 16:05 DEBUG    start check payload reflected in html
+03-04 16:05 DEBUG    XSS reflected wasn't found for URL = http://10.209.27.136/ufmRest/monitoring/resources
+03-04 16:05 DEBUG    adding result into result container
+03-04 16:05 DEBUG    end parse request result
+03-04 16:05 DEBUG    start validating basic url
+03-04 16:05 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/monitoring/resources
+03-04 16:05 DEBUG    start validating current url
+03-04 16:05 DEBUG    request is GET without params:
+03-04 16:05 DEBUG    http://10.209.27.136:80 "GET /ufmRest/monitoring/resources HTTP/1.1" 200 146
+03-04 16:05 DEBUG    start parse request result
+03-04 16:05 DEBUG    REST API log has not errors
+03-04 16:05 DEBUG    start check payload reflected in html
+03-04 16:05 DEBUG    XSS reflected wasn't found for URL = http://10.209.27.136/ufmRest/monitoring/resources
+03-04 16:05 DEBUG    adding result into result container
+03-04 16:05 DEBUG    end parse request result
+03-04 16:05 DEBUG    start validating basic url
+03-04 16:05 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/monitoring/resources
+03-04 16:05 DEBUG    start validating current url
+03-04 16:05 DEBUG    request is GET without params:
+03-04 16:05 DEBUG    http://10.209.27.136:80 "GET /ufmRest/monitoring/resources HTTP/1.1" 200 146
+03-04 16:05 DEBUG    start parse request result
+03-04 16:05 DEBUG    REST API log has not errors
+03-04 16:05 DEBUG    start check payload reflected in html
+03-04 16:05 DEBUG    XSS reflected wasn't found for URL = http://10.209.27.136/ufmRest/monitoring/resources
+03-04 16:05 DEBUG    adding result into result container
+03-04 16:05 DEBUG    end parse request result
+03-04 16:05 DEBUG    start validating basic url
+03-04 16:05 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/monitoring/resources
+03-04 16:05 DEBUG    start validating current url
+03-04 16:05 DEBUG    request is GET without params:
+03-04 16:05 DEBUG    http://10.209.27.136:80 "GET /ufmRest/monitoring/resources HTTP/1.1" 200 146
+03-04 16:05 DEBUG    start parse request result
+03-04 16:05 DEBUG    REST API log has not errors
+03-04 16:05 DEBUG    start check payload reflected in html
+03-04 16:05 DEBUG    XSS reflected wasn't found for URL = http://10.209.27.136/ufmRest/monitoring/resources
+03-04 16:05 DEBUG    adding result into result container
+03-04 16:05 DEBUG    end parse request result
+03-04 16:05 DEBUG    start validating basic url
+03-04 16:05 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/monitoring/resources
+03-04 16:05 DEBUG    start validating current url
+03-04 16:05 DEBUG    request is GET without params:
+03-04 16:05 DEBUG    http://10.209.27.136:80 "GET /ufmRest/monitoring/resources HTTP/1.1" 200 146
+03-04 16:05 DEBUG    start parse request result
+03-04 16:05 DEBUG    REST API log has not errors
+03-04 16:05 DEBUG    start check payload reflected in html
+03-04 16:05 DEBUG    XSS reflected wasn't found for URL = http://10.209.27.136/ufmRest/monitoring/resources
+03-04 16:05 DEBUG    adding result into result container
+03-04 16:05 DEBUG    end parse request result
+03-04 16:05 DEBUG    start validating basic url
+03-04 16:05 INFO     validate basic url before fuzzing: http://10.209.27.136/ufmRest/monitoring/resources
+03-04 16:05 DEBUG    start validating current url
+03-04 16:05 DEBUG    request is GET without params:
+03-04 16:05 DEBUG    http://10.209.27.136:80 "GET /ufmRest/monitoring/resources HTTP/1.1" 200 146
+03-04 16:05 DEBUG    start parse request result
+03-04 16:05 DEBUG    REST API log has not errors
+03-04 16:05 DEBUG    start check payload reflected in html
+03-04 16:05 DEBUG    XSS reflected wasn't found for URL = http://10.209.27.136/ufmRest/monitoring/resources
+03-04 16:05 DEBUG    adding result into result container
+03-04 16:05 DEBUG    end parse request result
+03-04 16:05 DEBUG    start print_result
+03-04 16:05 INFO     printing all fuzzing results for url: http://10.209.27.136/ufmRest/monitoring/resources
+03-04 16:05 DEBUG    end print_result
+03-04 16:05 DEBUG    starting save results
+03-04 16:05 INFO     saving results of fuzzing file: integer_overflow
+03-04 16:05 DEBUG    end save results
+03-04 16:05 DEBUG    Clearing results for next url
